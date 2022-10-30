@@ -4,6 +4,7 @@ import Header from '../Components/header'
 import Hero from '../Components/hero'
 import Navbar from '../Components/navbar'
 import ProductCaregory from '../Components/ProductCaregory'
+import ProductDetails from '../Components/ProductDetails'
 import styles from '../styles/Home.module.css'
 import Product from './product'
 
@@ -20,6 +21,7 @@ export default function Home() {
       <Hero />
       <ProductCaregory />
       <Product />
+      <ProductDetails />
     </div>
   )
 }
