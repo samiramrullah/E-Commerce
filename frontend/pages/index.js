@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Footer from '../Components/footer'
 import Header from '../Components/header'
 import Hero from '../Components/hero'
 import Navbar from '../Components/navbar'
@@ -22,6 +23,7 @@ export default function Home() {
       <ProductCaregory />
       <Product />
       <ProductDetails />
+      <Footer />
     </div>
   )
 }
