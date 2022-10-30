@@ -3,7 +3,9 @@ import Image from 'next/image'
 import Header from '../Components/header'
 import Hero from '../Components/hero'
 import Navbar from '../Components/navbar'
+import ProductCaregory from '../Components/ProductCaregory'
 import styles from '../styles/Home.module.css'
+import Product from './product'
 
 export default function Home() {
   return (
@@ -16,6 +18,9 @@ export default function Home() {
       {/* <Header /> */}
       <Navbar />
       <Hero />
+      <ProductCaregory />
+      <Product />
     </div>
   )
 }
+
