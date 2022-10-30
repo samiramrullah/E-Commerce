@@ -12,7 +12,7 @@ router.post('/', (req, res, next) => {
     res.status(200).json({
         message: 'I am product post'
     })
-})
+});
 
 router.patch('/', (req, res, next) => {
     res.status(200).json({
@@ -24,6 +24,6 @@ router.delete('/', (req, res, next) => {
     res.status(200).json({
         message: 'I am product delete'
     })
-})
+});
 
 module.exports = router;
