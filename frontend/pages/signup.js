@@ -9,7 +9,23 @@ const Signup = () => {
     const [cnfPassword, setcnfPassword] = useState();
 
     const formSubmitHandler = () => {
-        console.log('Working');
+        if (password != cnfPassword) {
+            alert("Password didn't match")
+        }
+        else {
+            const data = {
+                fName,
+                email,
+                contactNumber,
+                password,
+            }
+            console.log(data);
+            setfName('');
+            setemail('');
+            setcontactNumber('');
+            setpassword('');
+            setcnfPassword('')
+        }
     }
     return (
         <>
@@ -25,6 +41,7 @@ const Signup = () => {
                             placeholder="Full Name"
                             required={true}
                             onChange={(e) => setfName(e.target.value)}
+                            value={fName}
                         />
 
                         <input
@@ -34,6 +51,7 @@ const Signup = () => {
                             placeholder="Email"
                             required={true}
                             onChange={(e) => setemail(e.target.value)}
+                            value={email}
                         />
                         <input
                             type={'number'}
@@ -42,6 +60,7 @@ const Signup = () => {
                             placeholder="Contact Number"
                             required={false}
                             onChange={(e) => setcontactNumber(e.target.value)}
+                            value={contactNumber}
                         />
 
                         <input
@@ -51,6 +70,7 @@ const Signup = () => {
                             placeholder="Password"
                             required={true}
                             onChange={(e) => setpassword(e.target.value)}
+                            value={password}
                         />
                         <input
                             type="password"
@@ -59,6 +79,7 @@ const Signup = () => {
                             placeholder="Confirm Password"
                             required={true}
                             onChange={(e) => setcnfPassword(e.target.value)}
+                            value={cnfPassword}
                         />
 
                         <button onClick={formSubmitHandler}
