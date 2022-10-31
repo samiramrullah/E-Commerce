@@ -41,7 +41,7 @@ const Signup = () => {
                             <a class="no-underline border-b border-grey-dark text-grey-dark" href="#">
                                 Terms of Service
                             </a> and
-                            <a class="no-underline border-b border-grey-dark text-grey-dark" href="#">
+                            <a class="no-underline border-b border-grey-dark text-grey-dark ml-2" href="#">
                                 Privacy Policy
                             </a>
                         </div>
