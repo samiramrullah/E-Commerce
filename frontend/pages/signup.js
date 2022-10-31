@@ -1,6 +1,16 @@
 import React from 'react'
-import Link from 'next/link'
+import Link from 'next/link';
+import { useState } from 'react';
 const Signup = () => {
+    const [fName, setfName] = useState();
+    const [email, setemail] = useState();
+    const [contactNumber, setcontactNumber] = useState();
+    const [password, setpassword] = useState();
+    const [cnfPassword, setcnfPassword] = useState();
+
+    const formSubmitHandler = () => {
+        console.log('Working');
+    }
     return (
         <>
 
@@ -13,48 +23,48 @@ const Signup = () => {
                             class="block border border-grey-light w-full p-3 rounded mb-4"
                             name="fullname"
                             placeholder="Full Name"
-                            required={true} />
+                            required={true}
+                            onChange={(e) => setfName(e.target.value)}
+                        />
 
                         <input
                             type="text"
                             class="block border border-grey-light w-full p-3 rounded mb-4"
                             name="email"
                             placeholder="Email"
-                            required={true} />
+                            required={true}
+                            onChange={(e) => setemail(e.target.value)}
+                        />
                         <input
                             type={'number'}
                             class="block border border-grey-light w-full p-3 rounded mb-4"
                             name="contactNumber"
                             placeholder="Contact Number"
-                            required={false} />
+                            required={false}
+                            onChange={(e) => setcontactNumber(e.target.value)}
+                        />
 
                         <input
                             type="password"
                             class="block border border-grey-light w-full p-3 rounded mb-4"
                             name="password"
                             placeholder="Password"
-                            required={true} />
+                            required={true}
+                            onChange={(e) => setpassword(e.target.value)}
+                        />
                         <input
                             type="password"
                             class="block border border-grey-light w-full p-3 rounded mb-4"
                             name="confirm_password"
                             placeholder="Confirm Password"
-                            required={true} />
+                            required={true}
+                            onChange={(e) => setcnfPassword(e.target.value)}
+                        />
 
-                        <button
+                        <button onClick={formSubmitHandler}
                             type="submit"
                             class="w-full text-center py-3 rounded bg-green-600 text-white hover:bg-green-dark focus:outline-none my-1"
                         >Create Account</button>
-
-                        <div class="text-center text-sm text-grey-dark mt-4">
-                            By signing up, you agree to the <br />
-                            <a class="no-underline border-b border-grey-dark text-grey-dark" href="#">
-                                Terms of Service
-                            </a> and
-                            <a class="no-underline border-b border-grey-dark text-grey-dark ml-2" href="#">
-                                Privacy Policy
-                            </a>
-                        </div>
                     </div>
                     <div class="text-grey-dark mt-6">
                         Already have an account?
