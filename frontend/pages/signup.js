@@ -1,7 +1,8 @@
 import React from 'react'
 import Link from 'next/link';
 import { useState } from 'react';
-import Navbar from '../Components/navbar'
+import Navbar from '../Components/navbar';
+import axios from 'axios'
 const Signup = () => {
     const [fName, setfName] = useState();
     const [email, setemail] = useState();
@@ -20,12 +21,15 @@ const Signup = () => {
                 contactNumber,
                 password,
             }
-            console.log(data);
+            axios.post('http://127.0.0.1:5000/user', data)
+                .then(res => console.log(res))
+                .catch(err => console.log(err))
             setfName('');
             setemail('');
             setcontactNumber('');
             setpassword('');
             setcnfPassword('')
+
         }
     }
     return (
