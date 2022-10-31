@@ -1,7 +1,7 @@
 import React from 'react'
 import Footer from '../Components/footer'
 import Navbar from '../Components/navbar'
-
+import Link from 'next/link'
 const Signup = () => {
     return (
         <>
@@ -47,7 +47,7 @@ const Signup = () => {
 
                                     <p class="border-t border-gray-100 dark:border-gray-700 pt-6 text-sm text-gray-500 dark:text-gray-400">
                                         Don't have an account ?
-                                        <a href="#" class="text-primary">Sign up</a>
+                                        <Link href="/signup" class="text-primary">Sign up</Link>
                                     </p>
                                 </form>
                             </div>

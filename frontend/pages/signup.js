@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Link from 'next/link'
 const Signup = () => {
     return (
         <>
@@ -12,24 +12,34 @@ const Signup = () => {
                             type="text"
                             class="block border border-grey-light w-full p-3 rounded mb-4"
                             name="fullname"
-                            placeholder="Full Name" />
+                            placeholder="Full Name"
+                            required={true} />
 
                         <input
                             type="text"
                             class="block border border-grey-light w-full p-3 rounded mb-4"
                             name="email"
-                            placeholder="Email" />
+                            placeholder="Email"
+                            required={true} />
+                        <input
+                            type={'number'}
+                            class="block border border-grey-light w-full p-3 rounded mb-4"
+                            name="contactNumber"
+                            placeholder="Contact Number"
+                            required={false} />
 
                         <input
                             type="password"
                             class="block border border-grey-light w-full p-3 rounded mb-4"
                             name="password"
-                            placeholder="Password" />
+                            placeholder="Password"
+                            required={true} />
                         <input
                             type="password"
                             class="block border border-grey-light w-full p-3 rounded mb-4"
                             name="confirm_password"
-                            placeholder="Confirm Password" />
+                            placeholder="Confirm Password"
+                            required={true} />
 
                         <button
                             type="submit"
@@ -46,12 +56,11 @@ const Signup = () => {
                             </a>
                         </div>
                     </div>
-
                     <div class="text-grey-dark mt-6">
                         Already have an account?
-                        <a class="no-underline border-b border-blue text-blue ml-4" href="../login/">
+                        <Link class="no-underline border-b border-blue text-blue ml-4" href="/signin">
                             Log in
-                        </a>.
+                        </Link>.
                     </div>
                 </div>
             </div>
