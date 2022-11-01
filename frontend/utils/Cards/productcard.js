@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import { useState } from 'react';
 const Productcard = ({ title, price, img, id }) => {
     return (
         <>
@@ -15,7 +14,7 @@ const Productcard = ({ title, price, img, id }) => {
                         <button className=" font-medium text-base leading-4 text-gray-800 bg-white py-3 w-full">Add to bag</button>
                         <Link href={`/productdetails/${id}`}> <button className=" bg-transparent font-medium text-base leading-4 border-2 border-white py-3 w-full mt-2 text-white">Quick View</button></Link>
                     </div>
-                    {/* <Link to={`/details/${i.id}`}>{i.name}</Link> */}
+
                 </div>
                 <p className=" font-normal text-xl leading-5 text-gray-800 md:mt-6 mt-4">{title}</p>
                 <p className=" font-semibold text-xl leading-5 text-gray-800 mt-4">${price}</p>
