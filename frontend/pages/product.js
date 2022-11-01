@@ -1,8 +1,18 @@
 import React from 'react'
 import Navbar from '../Components/navbar'
-import Productcard from '../utils/Cards/productcard'
+import Productcard from '../utils/Cards/productcard';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 const Product = () => {
+    const [allProducts, setallProduct] = useState();
+    useEffect(() => {
+        fetch('https://fakestoreapi.com/products')
+            .then((res) => res.json())
+            .then((data) => setallProduct(data))
+            .catch("Error in Connecting to database");
+    }, [])
+    console.log(allProducts);
     return (
         <>
             {/* <Navbar /> */}
@@ -27,6 +37,11 @@ const Product = () => {
                     </div>
 
                     <div className=" grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:gap-y-12 lg:gap-x-8 sm:gap-y-10 sm:gap-x-6 gap-y-6 lg:mt-12 mt-10">
+
+                        {allProducts?.map(itm => (
+                            <Productcard title={itm.title} price={itm.price} img={itm.image} />
+                        ))}
+                        {/* <Productcard />
                         <Productcard />
                         <Productcard />
                         <Productcard />
@@ -34,8 +49,7 @@ const Product = () => {
                         <Productcard />
                         <Productcard />
                         <Productcard />
-                        <Productcard />
-                        <Productcard />
+                        <Productcard /> */}
                     </div>
 
                     <div className=" flex justify-center items-center">
