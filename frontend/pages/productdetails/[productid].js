@@ -1,7 +1,19 @@
 import React from 'react'
 import { useRouter } from 'next/router';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 const ProductDetails = () => {
+    const [details, setdetails] = useState()
     const router = useRouter();
+    const productid = router.query.productid;
+
+    useEffect(() => {
+        fetch(`https://fakestoreapi.com/products/${productid}`)
+            .then((res) => res.json())
+            .then(data => setdetails(data))
+
+    }, [productid])
+    console.log(details);
     return (
         <>
             <section class="text-gray-700 body-font overflow-hidden bg-white">
