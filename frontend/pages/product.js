@@ -12,7 +12,6 @@ const Product = () => {
             .then((data) => setallProduct(data))
             .catch("Error in fetching products");
     }, [])
-    console.log(allProducts);
     return (
         <>
         <div className=" 2xl:container 2xl:mx-auto">
@@ -20,8 +19,7 @@ const Product = () => {
                 <p className=" w-10/12 mx-auto md:w-full  font-semibold lg:text-4xl text-3xl lg:leading-9 md:leading-7 leading-9 text-center text-gray-800">Summer Collection Vol-1</p>
             </div>
             <div className=" py-6 lg:px-20 md:px-6 px-4">
-                {/* <p className=" font-normal text-sm leading-3 text-gray-600 ">Home / Shop by Category / Women</p>
-                <hr className=" w-full bg-gray-200 my-6" /> */}
+        
 
                 <div className=" flex justify-between items-center">
                     <div className=" flex space-x-3 justify-center items-center">
