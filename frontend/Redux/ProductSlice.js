@@ -19,9 +19,9 @@ const productSlice=createSlice({
         },
         setProductfetchStatus(state,action)
         {
-            state.productFetchStatus(action.payload);
-        }
-    }
+            state.productFetchStatus=(action.payload);
+        },
+    },
 });
 
 export const {setProducts ,setProductfetchStatus}=productSlice.actions;

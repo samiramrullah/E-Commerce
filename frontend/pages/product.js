@@ -1,17 +1,19 @@
 import React from 'react'
-
 import Productcard from '../utils/Cards/productcard';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import {useDispatch,useSelector} from 'react-redux';
+import { fetchProducts } from '../Redux/ProductSlice';
 
 const Product = () => {
-    const [allProducts, setallProduct] = useState();
+    const dispatch=useDispatch();
+    const { products:allProducts, productFetchStatus } = useSelector((state) => state.products);
     useEffect(() => {
-        fetch('https://fakestoreapi.com/products')
-            .then((res) => res.json())
-            .then((data) => setallProduct(data))
-            .catch("Error in fetching products");
+        dispatch(fetchProducts());
     }, [])
+    console.log('====================================');
+    console.log(allProducts);
+    console.log('====================================');
     return (
         <>
         <div className=" 2xl:container 2xl:mx-auto">
