@@ -6,6 +6,7 @@ import Hero from '../Components/hero'
 import Navbar from '../Components/navbar'
 import ProductCaregory from '../Components/ProductCaregory'
 import ProductDetails from '../Components/ProductDetails'
+import Test from '../Components/test'
 import styles from '../styles/Home.module.css'
 import Product from './product'
 
@@ -23,6 +24,7 @@ export default function Home() {
       <Product />
       <ProductDetails />
       <Footer />
+      {/* <Test/> */}
     </div>
   )
 }

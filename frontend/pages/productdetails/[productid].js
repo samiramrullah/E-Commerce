@@ -2,6 +2,7 @@ import React from 'react'
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import Navbar from '../../Components/navbar';
 const ProductDetails = () => {
     const [details, setdetails] = useState()
     const [showloader, setshowloader] = useState(false)
@@ -35,6 +36,7 @@ const ProductDetails = () => {
     else {
         return (
             <>
+            <Navbar/>
                 <section class="text-gray-700 body-font overflow-hidden bg-white">
                     <button onClick={() => router.push('/product')} className=" hover:bg-gray-700 focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 bg-gray-800 py-5 md:px-16 md:w-auto w-full lg:mt-28 md:mt-12 mt-10 text-white font-medium text-base leading-4">
                         Back</button>
