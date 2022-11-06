@@ -2,64 +2,92 @@ import React from 'react'
 import Footer from '../Components/footer'
 import Navbar from '../Components/navbar'
 import Link from 'next/link'
+import { useState } from 'react'
 const Signup = () => {
+    const [showPassword,setShowPassword]=useState(false);
+    const showPasswordhandler=()=>{
+        if(showPassword)
+        {
+            setShowPassword(false);
+        }
+        else
+        {
+            setShowPassword(true);
+        }
+    }
     return (
         <>
             <Navbar />
-            <div class="relative py-16">
-                <div class="container relative m-auto px-6 text-gray-500 md:px-12 xl:px-40">
-                    <div class="m-auto space-y-8 md:w-8/12 lg:w-6/12 xl:w-6/12">
-                        <img src="https://tailus.io/sources/blocks/simplecard/preview/images/tailus.svg" loading="lazy" class="ml-4 w-36" alt="tailus logo" />
-                        <div class="rounded-3xl border border-gray-100 bg-white dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 backdrop-blur-2xl">
-                            <div class="p-8 py-12 sm:p-16">
-                                <h2 class="mb-8 text-2xl font-bold text-gray-800 dark:text-white">Sign in to your account</h2>
-                                <form action="" class="space-y-8">
-                                    <div class="space-y-2">
-                                        <label for="email" class="text-gray-600 dark:text-gray-300">Email</label>
-                                        <input
-                                            type="email"
-                                            name="email"
-                                            id="email"
-                                            autocomplete="username"
-                                            class="focus:outline-none block w-full rounded-md border border-gray-200 dark:border-gray-600 bg-transparent px-4 py-3 text-gray-600 transition duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 focus:ring-cyan-300"
-                                        />
-                                    </div>
-
-                                    <div>
-                                        <div class="flex items-center justify-between">
-                                            <label for="pwd" class="text-gray-600 dark:text-gray-300">Password</label>
-                                            <button class="-mr-2 p-2" type="reset">
-                                                <span class="text-sm text-primary">Forgot your password ?</span>
-                                            </button>
+            <section class="flex items-center justify-center h-screen font-poppins">
+                <div class="flex-1">
+                    <div class="px-2 mx-auto max-w-7xl lg:px-4">
+                        <div class="relative ">
+                            <div class="relative px-4 py-4 bg-gray-100 shadow-md dark:bg-gray-900 md:py-11 sm:px-8">
+                                <div class="max-w-lg mx-auto text-center">
+                                    <a href="#" class="inline-block mb-4 text-blue-900 dark:text-gray-400 lg:mb-7 ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor"
+                                            class="bi bi-person-circle" viewBox="0 0 16 16">
+                                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                            <path fill-rule="evenodd"
+                                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                                        </svg>
+                                    </a>
+                                    <h2 class="mb-4 text-2xl font-bold text-gray-700 lg:mb-7 md:text-5xl dark:text-gray-300">
+                                        Login your account</h2>
+                                    <p class="text-gray-500 dark:text-gray-400">Your credentials here</p>
+                                    <form action="" class="mt-4 lg:mt-7 ">
+                                        <div class="">
+                                            <input type="email"
+                                                class="w-full px-4 py-3 mt-2 bg-white rounded-lg lg:py-5 dark:text-gray-300 dark:bg-gray-700 -gray-800"
+                                                name="" placeholder="Enter your email" />
                                         </div>
-                                        <input
-                                            type="password"
-                                            name="pwd"
-                                            id="pwd"
-                                            autocomplete="current-password"
-                                            class="focus:outline-none block w-full rounded-md border border-gray-200 dark:border-gray-600 bg-transparent px-4 py-3 text-gray-600 transition duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 focus:ring-cyan-300"
-                                        />
-                                    </div>
-
-                                    <button type="submit" class="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95">
-                                        <span class="relative text-base font-semibold text-white dark:text-dark">Connect</span>
-                                    </button>
-
-                                    <p class="border-t border-gray-100 dark:border-gray-700 pt-6 text-sm text-gray-500 dark:text-gray-400">
-                                        Don't have an account ?
-                                        <Link href="/signup" class="text-primary">Sign up</Link>
-                                    </p>
-                                </form>
+                                        <div class="mt-4 lg:mt-7">
+                                            <div>
+                                                <div class="relative flex items-center">
+                                                    {showPassword?(<input type="text"
+                                                        class="w-full px-4 py-3 bg-white rounded-lg lg:py-5 dark:text-gray-300 dark:bg-gray-700 -gray-800 "
+                                                        name="" placeholder="Enter password" />):(
+                                                            <input type="password"
+                                                            class="w-full px-4 py-3 bg-white rounded-lg lg:py-5 dark:text-gray-300 dark:bg-gray-700 -gray-800 "
+                                                            name="" placeholder="Enter password" />
+                                                    )}
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" onClick={showPasswordhandler}
+                                                        class="absolute right-0 mr-3 dark:text-gray-300 bi bi-eye-slash" fill="currentColor"
+                                                         viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7.028 7.028 0 0 0-2.79.588l.77.771A5.944 5.944 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.134 13.134 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486l.708.709z" />
+                                                        <path
+                                                            d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829l.822.822zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829z" />
+                                                        <path
+                                                            d="M3.35 5.47c-.18.16-.353.322-.518.487A13.134 13.134 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7.029 7.029 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12-.708.708z" />
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-wrap items-center justify-between mt-4 lg:mt-7">
+                                            <label for="" class="flex dark:text-gray-300">
+                                                <input type="checkbox" class="mt-1 mr-4" />
+                                                <span class="text-sm ">Remember me</span>
+                                            </label>
+                                            <a href=" #"
+                                                class="mt-2 text-sm font-semibold text-blue-500 lg:mt-0 dark:text-blue-300 hover:underline">
+                                                forgot password? </a>
+                                        </div>
+                                        <button
+                                            class="w-full py-3 text-lg font-bold text-gray-300 uppercase bg-blue-700 rounded-md lg:mt-7 mt-7 dark:text-gray-300 dark:bg-blue-700 px-11 md:mt-7 hover:bg-blue-900 dark:hover:bg-blue-900"
+                                            type="submit">LOGIN</button>
+                                        <p class="mt-4 text-xs text-gray-700 lg:mt-7 dark:text-gray-400 lg:text-base">
+                                            Need an account?
+                                            <a href="#" class="font-semibold text-blue-400 hover:text-blue-600">
+                                                Create an account</a>
+                                        </p>
+                                    </form>
+                                </div>
                             </div>
-                        </div>
-                        <div class="space-x-4 text-center text-gray-500">
-                            <span>&copy; tailus</span>
-                            <a href="#" class="text-sm hover:text-primary">Contact</a>
-                            <a href="#" class="text-sm hover:text-primary">Privacy & Terms</a>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
             <Footer />
         </>
     )

@@ -117,7 +117,7 @@ const Navbar = () => {
                                         </svg>
                                         </div>
                                         <div className='pl-3 font-bold'>
-                                          {cartItems.length}
+                                          {cartItems && cartItems.length}
                                         </div>
                                         
                                         </div>
