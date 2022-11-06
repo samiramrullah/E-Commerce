@@ -14,7 +14,7 @@ const OrderSummery = () => {
                     <h2 class="mb-10 text-4xl font-bold text-center dark:text-gray-400">Your Cart</h2>
                     <div class="px-6 mb-10 lg:px-0">
                         {cartItems?.map(itm=>(
-                            <CartCard title={itm.title} price={itm.price} img={itm.image}/>
+                            <CartCard title={itm.title} price={itm.price} img={itm.image} id={itm.id}/>
                         ))}
 
                     </div>

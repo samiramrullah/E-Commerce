@@ -9,10 +9,10 @@ const Productcard = ({ title, price, img, id }) => {
         <>
           <div class=" p-6 border-t border-b border-r first:border-l dark:border-gray-700 dark:bg-gray-900">
                                 <div class="relative">
-                                    <a class="block">
+                                    <Link href={`productdetails/${id}`} class="block">
                                         <img src={img}
                                             class="object-cover w-full h-64 rounded" alt="" />
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div class="pt-6">
                                     <a href="#"
