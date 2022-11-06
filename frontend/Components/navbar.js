@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from "react";
 import {useSelector} from 'react-redux';
+import Link from 'next/link'
 
 const Navbar = () => {
     const [searchInput, setSearchInput] = useState(true);
@@ -12,7 +13,6 @@ const Navbar = () => {
           <div className="dark:bg-gray-900">
             <div>
                 <div className="relative">
-                 
                     <div id="md-searchbar" className={`${mdOptionsToggle ? "hidden" : "flex"} bg-white dark:bg-gray-900 lg:hidden py-5 px-6 items-center justify-between`}>
                         <div className="flex items-center space-x-3 text-gray-800 dark:text-white">
                             <div>
@@ -62,14 +62,15 @@ const Navbar = () => {
                             </h1>
                             <ul className="hidden w-8/12 md:flex items-center justify-center space-x-8">
                                 <li>
-                                    <a href="javascript:void(0)" className="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline">
+                                    <Link  className="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline" href={'/'}>
                                         Home
-                                    </a>
+                                    </Link>
+                                    
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)" className="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline">
-                                        Furniture
-                                    </a>
+                                <Link  className="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline" href={'/product'}>
+                                        Products
+                                    </Link>
                                 </li>
                                 <li>
                                     <a href="javascript:void(0)" className="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline">
@@ -104,6 +105,7 @@ const Navbar = () => {
                                             />
                                         </svg>
                                     </button>
+                                    <Link href={'/OrderSummery'}>
                                     <button aria-label="go to cart" className="text-gray-800 dark:hover:text-gray-300 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800">
                                         <div className='flex'>
                                         <div>
@@ -121,6 +123,9 @@ const Navbar = () => {
                                         </div>
                                         
                                     </button>
+                                    
+                                    </Link>
+                                    
                                 </div>
                                 <div className="flex lg:hidden">
                                     <button aria-label="show options" onClick={() => setMdOptionsToggle(!mdOptionsToggle)} className="text-black dark:text-white dark:hover:text-gray-300 hidden md:flex focus:outline-none focus:ring-2 rounded focus:ring-gray-600">
