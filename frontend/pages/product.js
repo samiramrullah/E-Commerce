@@ -18,37 +18,156 @@ const Product = () => {
         return (
             <>
             <Navbar/>
-            <div className=" 2xl:container 2xl:mx-auto">
-                <div className=" bg-gray-50 text-center lg:py-10 md:py-8 py-6">
-                    <p className=" w-10/12 mx-auto md:w-full  font-semibold lg:text-4xl text-3xl lg:leading-9 md:leading-7 leading-9 text-center text-gray-800">Summer Collection Vol-1</p>
-                </div>
-                <div className=" py-6 lg:px-20 md:px-6 px-4">
-            
-    
-                    <div className=" flex justify-between items-center">
-                        <div className=" flex space-x-3 justify-center items-center">
-                            <svg className=" cursor-pointer" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M3.75 7.5H20.25" stroke="#1F2937" strokeMiterlimit="10" strokeLinecap="round" />
-                                <path d="M3.75 12H20.25" stroke="#1F2937" strokeMiterlimit="10" strokeLinecap="round" />
-                                <path d="M3.75 16.5H20.25" stroke="#1F2937" strokeMiterlimit="10" strokeLinecap="round" />
+            <section class="flex pt-4 bg-white lg:h-screen dark:bg-gray-800">
+        <div class=" mx-auto max-w-7xl">
+            <div class="grid grid-cols-1 gap-4 lg:gap-0 sm:gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                <div class="p-6 border-t border-b border-r first:border-l dark:border-gray-700 dark:bg-gray-900">
+                    <div class="relative">
+                        <a class="block">
+                            <img src="https://i.postimg.cc/tghbJjN7/pexels-web-donut-19090.jpg"
+                                class="object-cover w-full h-64 rounded" alt=""/>
+                        </a>
+                    </div>
+                    <div class="pt-6">
+                        <a href="#"
+                            class="flex px-4 py-2 mb-4 font-bold text-white uppercase bg-blue-600 rounded-full w-fit">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 icon icon-tabler icon-tabler-plus"
+                                width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
                             </svg>
-                            <p className=" font-normal text-base leading-4 text-gray-800">Filter</p>
-                        </div>
-                        <p className=" cursor-pointer hover:underline duration-100 font-normal text-base leading-4 text-gray-600">Showing 18 products</p>
+                            <span class="text-sm">
+                                Add To Cart
+                            </span>
+                          
+                        </a>
+
+                        <a class="">
+                            <p class="mb-2 text-lg font-bold text-black dark:text-gray-400"><span
+                                    class="text-xl font-bold text-black dark:text-gray-300">Rs 129,000
+                                   
+                                </span></p>
+                            <p class="text-gray-500">
+                                Adidas Nike Shoe With No Strings
+                            </p>
+                        </a>
+
+                        <div class="relative flex items-center justify-between"></div>
                     </div>
-    
-                    <div className=" grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:gap-y-12 lg:gap-x-8 sm:gap-y-10 sm:gap-x-6 gap-y-6 lg:mt-12 mt-10">
-                        
-                    {allProducts?.map(itm => (
-                                <Productcard title={itm.title} price={itm.price} img={itm.image} id={itm.id} />
-                            ))}
+                </div>
+                <div class="p-6 border-t border-b border-r first:border-l dark:border-gray-700 dark:bg-gray-900">
+                    <div class="relative">
+                        <a class="block">
+                            <img src="https://i.postimg.cc/RZ4Qy1p8/pexels-nathan-j-hilton-4277508.jpg"
+                                class="object-cover w-full h-64 rounded" alt=""/>
+                        </a>
                     </div>
-    
-                    <div className=" flex justify-center items-center">
-                        <button className=" hover:bg-gray-700 focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 bg-gray-800 py-5 md:px-16 md:w-auto w-full lg:mt-28 md:mt-12 mt-10 text-white font-medium text-base leading-4">Load More</button>
+                    <div class="pt-6">
+                        <a href="#"
+                            class="flex px-4 py-2 mb-4 font-bold text-white uppercase bg-blue-600 rounded-full w-fit">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 icon icon-tabler icon-tabler-plus"
+                                width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                            <span class="text-sm">
+                                Add To Cart
+                            </span>
+                           
+                        </a>
+
+                        <a class="">
+                            <p class="mb-2 text-lg font-bold text-black dark:text-gray-400"><span
+                                    class="text-xl font-bold text-black dark:text-gray-300">Rs 129,000
+                                   
+                                </span></p>
+                            <p class="text-gray-500">
+                                Adidas Nike Shoe With No Strings
+                            </p>
+                        </a>
+
+                        <div class="relative flex items-center justify-between"></div>
+                    </div>
+                </div>
+                <div class="p-6 border-t border-b border-r first:border-l dark:border-gray-700 dark:bg-gray-900">
+                    <div class="relative">
+                        <a class="block">
+                            <img src="https://i.postimg.cc/Z5w3QGdB/pexels-kabita-darlami-5788986.jpg"
+                                class="object-cover w-full h-64 rounded" alt=""/>
+                        </a>
+                    </div>
+                    <div class="pt-6">
+                        <a href="#"
+                            class="flex px-4 py-2 mb-4 font-bold text-white uppercase bg-blue-600 rounded-full w-fit">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 icon icon-tabler icon-tabler-plus"
+                                width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                            <span class="text-sm">
+                                Add To Cart
+                            </span>
+                           
+                        </a>
+
+                        <a class="">
+                            <p class="mb-2 text-lg font-bold text-black dark:text-gray-400"><span
+                                    class="text-xl font-bold text-black dark:text-gray-300">Rs 129,000
+                                    
+                                </span></p>
+                            <p class="text-gray-500">
+                                Adidas Nike Shoe With No Strings
+                            </p>
+                        </a>
+
+                        <div class="relative flex items-center justify-between"></div>
+                    </div>
+                </div>
+                <div class="p-6 border-t border-b border-r first:border-l dark:border-gray-700 dark:bg-gray-900">
+                    <div class="relative">
+                        <a class="block">
+                            <img src="https://i.postimg.cc/hP5c3MG4/pexels-melvin-buezo-2529148.jpg"
+                                class="object-cover w-full h-64 rounded" alt=""/>
+                        </a>
+                    </div>
+                    <div class="pt-6">
+                        <a href="#"
+                            class="flex px-4 py-2 mb-4 font-bold text-white uppercase bg-blue-600 rounded-full w-fit">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 icon icon-tabler icon-tabler-plus"
+                                width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                            <span class="text-sm">
+                                Add To Cart
+                            </span>
+                           
+                        </a>
+
+                        <a class="">
+                            <p class="mb-2 text-lg font-bold text-black dark:text-gray-400"><span
+                                    class="text-xl font-bold text-black dark:text-gray-300">Rs 129,000
+                                   
+                                </span></p>
+                            <p class="text-gray-500">
+                                Adidas Nike Shoe With No Strings
+                            </p>
+                        </a>
+
+                        <div class="relative flex items-center justify-between"></div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
             </>
         )
     }
