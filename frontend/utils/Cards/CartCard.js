@@ -1,6 +1,11 @@
-import React from 'react'
-
+import React from 'react';
+import {useDispatch} from 'react-redux';
+import {add, remove} from '../../Redux/CartSlice'
 const CartCard = ({title,price,img,id}) => {
+    const dispatch=useDispatch();
+    const  removeHandler=()=>{
+        dispatch(remove(id))
+    }
   return (
     <>
     <div class="relative flex flex-wrap items-center pb-8 mb-8 -mx-4 border-b border-gray-200 dark:border-gray-500 xl:justify-between border-opacity-40">
