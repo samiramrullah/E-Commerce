@@ -11,7 +11,7 @@ const Navbar = () => {
           <div className="dark:bg-gray-900">
             <div>
                 <div className="relative">
-                    {/* For md screen size */}
+                 
                     <div id="md-searchbar" className={`${mdOptionsToggle ? "hidden" : "flex"} bg-white dark:bg-gray-900 lg:hidden py-5 px-6 items-center justify-between`}>
                         <div className="flex items-center space-x-3 text-gray-800 dark:text-white">
                             <div>
