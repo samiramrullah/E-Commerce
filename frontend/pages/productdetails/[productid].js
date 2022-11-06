@@ -148,10 +148,10 @@ const ProductDetails = () => {
                             </p>
                             <div class="p-4 mb-8 border border-gray-300 dark:border-gray-700">
                                 <h2 class="mb-4 text-xl font-semibold dark:text-gray-400">Real time <span
-                                        class="px-2 bg-blue-500 text-gray-50">26</span>
+                                        class="px-2 bg-blue-500 text-gray-50">{Math.trunc(Math.random()*100)}</span>
                                     visitors right now! </h2>
                                 <div class="mb-1 text-xs font-medium text-gray-700 dark:text-gray-400">
-                                    Hurry up! left 23 in Stock
+                                    Hurry up! left {Math.trunc(Math.random()*100)} in Stock
                                 </div>
                                 <div class="w-full bg-gray-200 rounded-full h-2.5  dark:bg-gray-600">
                                     <div class="bg-blue-600 dark:bg-blue-400 h-2.5 rounded-full w-9/20">
