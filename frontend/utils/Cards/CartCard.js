@@ -1,15 +1,15 @@
 import React from 'react'
 
-const CartCard = () => {
+const CartCard = ({title,price,img}) => {
   return (
     <>
     <div class="relative flex flex-wrap items-center pb-8 mb-8 -mx-4 border-b border-gray-200 dark:border-gray-500 xl:justify-between border-opacity-40">
                             <div class="w-full mb-4 md:mb-0 h-96 md:h-44 md:w-56">
-                                <img src="https://i.postimg.cc/Z5w3QGdB/pexels-kabita-darlami-5788986.jpg" alt="" class="object-cover w-full h-full" />
+                                <img src={img} alt="" class="object-cover w-full h-full" />
                             </div>
                             <div class="w-full px-4 mb-6 md:w-96 xl:mb-0">
                                 <a class="block mb-5 text-xl font-medium hover:underline dark:text-gray-400" href="#">
-                                    White Shikhar Shoes lace added</a>
+                                    {title}</a>
                                 <div class="flex flex-wrap">
                                     <p class="mr-4 text-sm font-medium">
                                         <span class="dark:text-gray-400">Color:</span>
@@ -44,7 +44,7 @@ const CartCard = () => {
                             <div class="w-full px-4 xl:w-auto">
                                 <span class="text-xl font-medium text-blue-500 dark:text-blue-400 ">
                                     <span class="text-sm">$</span>
-                                    <span>544.90</span>
+                                    <span>{price}</span>
                                 </span>
                             </div>
                             <button class="absolute top-0 right-0 text-gray-400 lg:mt-6 lg:-mr-4 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-200">

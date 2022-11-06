@@ -7,6 +7,7 @@ import  Loader from '../../utils/Loader';
 import Footer from '../../components/footer'
 import {useDispatch} from 'react-redux';
 import { add } from '../../Redux/CartSlice';
+import Link from 'next/link';
 const ProductDetails = () => {
     const [details, setdetails] = useState()
     const [showloader, setshowloader] = useState(false)
@@ -223,9 +224,12 @@ const ProductDetails = () => {
                                 </div>
                             </div>
                             <div class="mb-4 mr-4 lg:mb-0">
+                                <Link href={'/OrderSummery'}>
                                 <button
                                     class="w-full h-10 p-2 mr-4 bg-blue-500 dark:text-gray-200 text-gray-50 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-500">
                                     Buy Now</button>
+                                </Link>
+                                
                             </div>
                             <div class="mb-4 mr-4 lg:mb-0">
                                 <button onClick={()=>addToCart(details)}

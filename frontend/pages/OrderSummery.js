@@ -2,8 +2,10 @@ import React from 'react'
 import Footer from '../components/footer'
 import Navbar from '../Components/navbar'
 import CartCard from '../utils/Cards/CartCard'
+import {useSelector} from 'react-redux'
 
 const OrderSummery = () => {
+    const cartItems=useSelector((state)=>state.cart);
     return (
         <>
             <Navbar/>
@@ -11,11 +13,9 @@ const OrderSummery = () => {
                 <div class="justify-center flex-1 px-4 py-6 mx-auto max-w-7xl lg:py-4 lg:px-6">
                     <h2 class="mb-10 text-4xl font-bold text-center dark:text-gray-400">Your Cart</h2>
                     <div class="px-6 mb-10 lg:px-0">
-                        <CartCard/>
-                        
-                        <CartCard/>
-                        <CartCard/>
-                        <CartCard/>
+                        {cartItems?.map(itm=>(
+                            <CartCard title={itm.title} price={itm.price} img={itm.image}/>
+                        ))}
 
                     </div>
                     <div class="flex flex-wrap justify-between">
