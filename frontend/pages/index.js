@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import FeatureProduct from '../components/featureProduct'
 import Footer from '../Components/footer'
 import Header from '../Components/header'
 import Hero from '../Components/hero'
@@ -21,8 +22,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <ProductCaregory />
-      {/* <Product />
-      <ProductDetails /> */}
+      <FeatureProduct/>
       <Footer />
       {/* <Test/> */}
     </div>
