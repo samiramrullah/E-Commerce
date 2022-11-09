@@ -116,7 +116,6 @@ const Footer = () => {
                     </div>
                 </div>
             </section>
-            Footer
 
         </>
     )
