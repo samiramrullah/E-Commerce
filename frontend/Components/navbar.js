@@ -44,8 +44,7 @@ const Navbar = () => {
                             </button>
                         </div>
                     </div>
-                    {/* For md screen size */}
-                    {/* For large screens */}
+                   
                     <div className="dark:bg-gray-900 bg-gray-50 px-6 py-9">
                         <div className="container mx-auto flex items-center justify-between">
                             <h1 className="md:w-2/12 cursor-pointer text-gray-800 dark:text-white" aria-label="the Crib.">
@@ -148,7 +147,7 @@ const Navbar = () => {
                             </div>
                         </div>
                     </div>
-                    {/* For small screen */}
+                   
                     <div id="mobile-menu" className={`${showMenu ? "flex" : "hidden"} absolute dark:bg-gray-900 z-10 inset-0 md:hidden bg-white flex-col h-screen w-full`}>
                         <div className="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 pb-4 p-4">
                             <div className="flex items-center space-x-3">

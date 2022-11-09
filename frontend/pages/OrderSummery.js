@@ -1,5 +1,5 @@
 import React from 'react'
-import Footer from '../components/footer'
+import Footer from '../components/Footer'
 import Navbar from '../Components/navbar'
 import CartCard from '../utils/Cards/CartCard'
 import {useSelector} from 'react-redux'

@@ -1,6 +1,6 @@
 import React from 'react'
-import Footer from '../Components/footer'
-import Navbar from '../Components/navbar'
+import Footer from '../components/Footer'
+import Navbar from '../components/Navbar'
 import Link from 'next/link'
 import { useState } from 'react'
 const Signup = () => {

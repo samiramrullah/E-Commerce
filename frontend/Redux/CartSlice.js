@@ -1,43 +1,46 @@
-// src/redux/cartSlice.js
-import { createSlice } from '@reduxjs/toolkit';
+import {createSlice} from '@reduxjs/toolkit';
 
-const cartSlice = createSlice({
-  name: 'cart',
-  initialState: {
-    cart: [],
-  },
-  reducers: {
-    addToCart: (state, action) => {
-      const itemInCart = state.cart.find((item) => item.id === action.payload.id);
-      if (itemInCart) {
-        itemInCart.quantity++;
-      } else {
-        state.cart.push({ ...action.payload, quantity: 1 });
-      }
-    },
-    incrementQuantity: (state, action) => {
-      const item = state.cart.find((item) => item.id === action.payload);
-      item.quantity++;
-    },
-    decrementQuantity: (state, action) => {
-      const item = state.cart.find((item) => item.id === action.payload);
-      if (item.quantity === 1) {
-        item.quantity = 1
-      } else {
-        item.quantity--;
-      }
-    },
-    removeItem: (state, action) => {
-      const removeItem = state.cart.filter((item) => item.id !== action.payload);
-      state.cart = removeItem;
-    },
-  },
+export const STATUSES=Object.freeze({
+    IDEL:'idel',
+    LOADING:'loading',
+    ERROR:'error',
 });
 
-export const cartReducer = cartSlice.reducer;
-export const {
-  addToCart,
-  incrementQuantity,
-  decrementQuantity,
-  removeItem,
-} = cartSlice.actions;
+const productSlice=createSlice({
+    name:'products',
+    initialState:{
+        products:[],
+        productFetchStatus:STATUSES.IDEL,
+    },
+    reducers:{
+        setProducts(state,action)
+        {
+            state.products=action.payload;
+        },
+        setProductfetchStatus(state,action)
+        {
+            state.productFetchStatus=(action.payload);
+        },
+    },
+});
+
+export const {setProducts ,setProductfetchStatus}=productSlice.actions;
+export default productSlice.reducer;
+
+
+//Thunk
+
+export const fetchProducts=()=>{
+    return async function fetchProductsThunk(dispatch,getstate){
+        dispatch(setProductfetchStatus(STATUSES.LOADING));
+        try{
+            const res=await fetch("https://fakestoreapi.com/products")
+            const data = await res.json();
+            dispatch(setProducts(data))
+            dispatch(setProductfetchStatus(STATUSES.IDEL))
+        }
+        catch(err){
+           dispatch(setProductfetchStatus(STATUSES.ERROR));
+        }
+    }
+}

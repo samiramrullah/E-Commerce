@@ -16,7 +16,6 @@ const FeatureProduct = () => {
                         <FeatureProductCard/>
                         <FeatureProductCard/>
                         <FeatureProductCard/>
-                        
                     </div>
                 </div>
             </section>
