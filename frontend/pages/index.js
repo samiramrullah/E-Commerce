@@ -7,6 +7,7 @@ import Navbar from '../components/Navbar'
 import ProductCaregory from '../Components/ProductCaregory'
 import styles from '../styles/Home.module.css'
 import Product from './product'
+import Test from '../components/test'
 
 export default function Home() {
   return (
