@@ -2,20 +2,21 @@ import React from 'react'
 import Footer from '../components/Footer'
 import Navbar from '../Components/navbar'
 import CartCard from '../utils/Cards/CartCard'
-import {useSelector} from 'react-redux'
+import { useSelector } from 'react-redux'
 
 const OrderSummery = () => {
-    const cartItems=useSelector((state)=>state.cart);
+    const cartItems = useSelector((state) => state.cart);
     return (
         <>
-            <Navbar/>
+            <Navbar />
             <section class="items-center py-24 bg-gray-50 font-poppins dark:bg-gray-700">
                 <div class="justify-center flex-1 px-4 py-6 mx-auto max-w-7xl lg:py-4 lg:px-6">
                     <h2 class="mb-10 text-4xl font-bold text-center dark:text-gray-400">Your Cart</h2>
                     <div class="px-6 mb-10 lg:px-0">
-                        {cartItems?.map(itm=>(
-                            <CartCard title={itm.title} price={itm.price} img={itm.image} id={itm.id}/>
-                        ))}
+                        {/* {cartItems?.map(itm => (
+                            <CartCard title={itm.title} price={itm.price} img={itm.image} id={itm.id} />
+                        ))} */}
+                        <p>waitF</p>
 
                     </div>
                     <div class="flex flex-wrap justify-between">
@@ -56,7 +57,7 @@ const OrderSummery = () => {
                     </div>
                 </div>
             </section>
-            <Footer/>
+            <Footer />
         </>
     )
 }

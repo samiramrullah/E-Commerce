@@ -14,54 +14,40 @@ const Product = () => {
     useEffect(() => {
         dispatch(fetchProducts());
     }, [])
-    console.log(allProducts);
     if (productFetchStatus == STATUSES.IDEL) {
         return (
             <>
                 <Navbar />
-
-                {/* <section class="flex items-center bg-gray-100 lg:h-screen font-poppins dark:bg-gray-900  mt-56">
-                    <div class="justify-center max-w-6xl px-4 py-4 mx-auto lg:py-0">
-                        <div class="grid grid-cols-1 gap-6 lg:grid-cols-3 md:grid-cols-2">
-                        {allProducts?.map(itm => (
-                            <Productcard title={itm.title} img={itm.image} price={itm.price} id={itm.id} />
-                        ))}
-                        </div>
+                <div className=" 2xl:container 2xl:mx-auto">
+                    <div className=" bg-gray-50 text-center lg:py-10 md:py-8 py-6">
+                        <p className=" w-10/12 mx-auto md:w-full  font-semibold lg:text-4xl text-3xl lg:leading-9 md:leading-7 leading-9 text-center text-gray-800">Summer Collection Vol-1</p>
                     </div>
-                </section> */}
-                <div className="mx-auto container px-6 xl:px-0 py-12">
-                    <div className="flex flex-col">
-                        <div className="flex flex-col justify-center">
-                            <div className="relative">
-                                <img className="hidden sm:block w-full" src="https://i.ibb.co/HxXSY0j/jason-wang-Nx-Awry-Abt-Iw-unsplash-1-1.png" alt="sofa" />
-                                <img className="sm:hidden w-full" src="https://i.ibb.co/B6qwqPT/jason-wang-Nx-Awry-Abt-Iw-unsplash-1.png" alt="sofa" />
-                                <div className="absolute sm:bottom-8 bottom-4 pr-10 sm:pr-0 left-4 sm:left-8 flex justify-start items-start">
-                                    <p className="text-3xl sm:text-4xl font-semibold leading-9 text-white">Range Comfort Sofas</p>
-                                </div>
+                    <div className=" py-6 lg:px-20 md:px-6 px-4">
+
+                        <div className=" flex justify-between items-center">
+                            <div className=" flex space-x-3 justify-center items-center">
+                                <svg className=" cursor-pointer" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3.75 7.5H20.25" stroke="#1F2937" strokeMiterlimit="10" strokeLinecap="round" />
+                                    <path d="M3.75 12H20.25" stroke="#1F2937" strokeMiterlimit="10" strokeLinecap="round" />
+                                    <path d="M3.75 16.5H20.25" stroke="#1F2937" strokeMiterlimit="10" strokeLinecap="round" />
+                                </svg>
+                                <p className=" font-normal text-base leading-4 text-gray-800">Filter</p>
                             </div>
+                            <p className=" cursor-pointer hover:underline duration-100 font-normal text-base leading-4 text-gray-600">Showing 18 products</p>
                         </div>
-                        <div className="mt-10 grid lg:grid-cols-3 gap-x-8 gap-y-8 items-center">
+
+                        <div className=" grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:gap-y-12 lg:gap-x-8 sm:gap-y-10 sm:gap-x-6 gap-y-6 lg:mt-12 mt-10">
+
                             {allProducts?.map(itm => (
-                                <Productcard title={itm.title} img={itm.image} price={itm.price} id={itm.id} />
+                                <Productcard className="flex-col" title={itm.title} img={itm.image} price={itm.price} id={itm.id} />
                             ))}
+
+
+
                         </div>
-                        <div className="flex justify-end items-end mt-12">
-                            <div className="flex flex-row items-center justify-center space-x-8">
-                                <button className="text-base leading-none text-gray-800 border-b-2 border-transparent focus:outline-none focus:border-gray-800">
-                                    <p>1</p>
-                                </button>
-                                <button className="text-base leading-none text-gray-800 border-b-2 border-transparent focus:outline-none focus:border-gray-800">
-                                    <p>2</p>
-                                </button>
-                                <button className="text-base leading-none text-gray-800 border-b-2 border-transparent focus:outline-none focus:border-gray-800">
-                                    <p>3</p>
-                                </button>
-                                <button className="flex justify-center items-center">
-                                    <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9 6L15 12L9 18" stroke="#1F2937" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                                    </svg>
-                                </button>
-                            </div>
+
+                        <div className=" flex justify-center items-center">
+                            <button className=" hover:bg-gray-700 focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 bg-gray-800 py-5 md:px-16 md:w-auto w-full lg:mt-28 md:mt-12 mt-10 text-white font-medium text-base leading-4">Load More</button>
                         </div>
                     </div>
                 </div>

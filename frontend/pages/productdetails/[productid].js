@@ -6,7 +6,7 @@ import Navbar from '../../Components/navbar';
 import Loader from '../../utils/Loader';
 import Footer from '../../components/footer'
 import { useDispatch } from 'react-redux';
-import { add } from '../../Redux/CartSlice';
+import { addToCart } from '../../Redux/CartSlice';
 import Link from 'next/link';
 const ProductDetails = () => {
     const [details, setdetails] = useState()
@@ -28,8 +28,8 @@ const ProductDetails = () => {
 
     }, [productid])
 
-    const addToCart = (product) => {
-        dispatch(add(product));
+    const addToCartHandler = (product) => {
+        dispatch(addToCart(product))
     }
 
 
@@ -46,18 +46,18 @@ const ProductDetails = () => {
                 <Navbar />
                 <section class="py-20 overflow-hidden bg-white font-poppins dark:bg-gray-800">
                     <Link href={'/product'}>
-                    <button class="text-base  rounded-r-none  hover:scale-110 focus:outline-none flex justify-center px-4 py-2 rounded font-bold cursor-pointer 
+                        <button class="text-base  rounded-r-none  hover:scale-110 focus:outline-none flex justify-center px-4 py-2 rounded font-bold cursor-pointer 
                    hover:bg-gray-200  
                    bg-gray-100 
                    text-gray-700 
                      border duration-200 ease-in-out 
                    border-gray-600 transition">
-                        <div class="flex leading-5">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left w-5 h-5">
-                                <polyline points="15 18 9 12 15 6"></polyline>
-                            </svg>
-                            Back</div>
-                    </button>
+                            <div class="flex leading-5">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left w-5 h-5">
+                                    <polyline points="15 18 9 12 15 6"></polyline>
+                                </svg>
+                                Back</div>
+                        </button>
                     </Link>
                     <div class="max-w-6xl px-4 py-4 mx-auto lg:py-8 md:px-6">
                         <div class="flex flex-wrap -mx-4">
@@ -176,7 +176,7 @@ const ProductDetails = () => {
                                         <p class="inline-block text-2xl font-semibold text-gray-700 dark:text-gray-400 ">
                                             <span>${details && (details.price)}</span>
                                             <span
-                                                class="text-base font-normal text-gray-500 line-through dark:text-gray-400">${details && (details.price + (20 / 100 * details.price).toPrecision(3))}</span>
+                                                class="text-base font-normal text-gray-500 line-through dark:text-gray-400">${details && (Math.trunc(Math.random() * 100) + details.price)}</span>
                                         </p>
                                     </div>
                                     <div class="mb-8">
@@ -246,7 +246,7 @@ const ProductDetails = () => {
 
                                         </div>
                                         <div class="mb-4 mr-4 lg:mb-0">
-                                            <button onClick={() => addToCart(details)}
+                                            <button onClick={() => addToCartHandler(details)}
                                                 class="flex items-center justify-center w-full h-10 p-2 text-gray-700 border border-gray-300 lg:w-11 hover:text-gray-50 dark:text-gray-200 dark:border-blue-600 hover:bg-blue-600 hover:border-blue-600 dark:bg-blue-600 dark:hover:bg-blue-500 dark:hover:border-blue-500 dark:hover:text-gray-300">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                                     class="bi bi-cart" viewBox="0 0 16 16">

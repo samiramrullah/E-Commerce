@@ -29,7 +29,6 @@ export default productSlice.reducer;
 
 
 //Thunk
-
 export const fetchProducts=()=>{
     return async function fetchProductsThunk(dispatch,getstate){
         dispatch(setProductfetchStatus(STATUSES.LOADING));
