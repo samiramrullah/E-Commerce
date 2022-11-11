@@ -8,7 +8,6 @@ const Navbar = () => {
     const [mdOptionsToggle, setMdOptionsToggle] = useState(true);
     const [showMenu, setShowMenu] = useState(false);
     const cartItems = useSelector((state) => state.cart)
-    console.log(cartItems);
     return (
         <>
             <div className="dark:bg-gray-900">
@@ -59,6 +58,7 @@ const Navbar = () => {
                                             fill="currentColor"
                                         />
                                     </svg>
+                                    Aapna Store
                                 </h1>
                                 <ul className="hidden w-8/12 md:flex items-center justify-center space-x-8">
                                     <li>

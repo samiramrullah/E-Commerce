@@ -6,7 +6,7 @@ import Navbar from '../../Components/navbar';
 import Loader from '../../utils/Loader';
 import Footer from '../../components/footer'
 import { useDispatch } from 'react-redux';
-import { addToCart } from '../../Redux/CartSlice';
+import { addToCart ,removeFromCart} from '../../Redux/CartSlice';
 import Link from 'next/link';
 const ProductDetails = () => {
     const [details, setdetails] = useState()
@@ -27,7 +27,6 @@ const ProductDetails = () => {
             });
 
     }, [productid])
-
     const addToCartHandler = (product) => {
         dispatch(addToCart(product))
     }
@@ -223,14 +222,14 @@ const ProductDetails = () => {
                                         <div class="mb-4 mr-4 lg:mb-0">
                                             <div class="w-28">
                                                 <div class="relative flex flex-row w-full h-10 bg-transparent rounded-lg">
-                                                    <button
+                                                    <button onClick={()=>dispatch(removeFromCart(details))}
                                                         class="w-20 h-full text-gray-600 bg-gray-100 border-r rounded-l outline-none cursor-pointer dark:border-gray-700 dark:hover:bg-gray-700 dark:text-gray-400 hover:text-gray-700 dark:bg-gray-900 hover:bg-gray-300">
                                                         <span class="m-auto text-2xl font-thin">-</span>
                                                     </button>
                                                     <input type="number"
                                                         class="flex items-center w-full font-semibold text-center text-gray-700 placeholder-gray-700 bg-gray-100 outline-none dark:text-gray-400 dark:placeholder-gray-400 dark:bg-gray-900 focus:outline-none text-md hover:text-black"
                                                         placeholder="1" />
-                                                    <button
+                                                    <button onClick={()=>dispatch(addToCart(details))}
                                                         class="w-20 h-full text-gray-600 bg-gray-100 border-l rounded-r outline-none cursor-pointer dark:border-gray-700 dark:hover:bg-gray-700 dark:text-gray-400 dark:bg-gray-900 hover:text-gray-700 hover:bg-gray-300">
                                                         <span class="m-auto text-2xl font-thin">+</span>
                                                     </button>

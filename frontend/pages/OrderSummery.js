@@ -6,6 +6,8 @@ import { useSelector } from 'react-redux'
 
 const OrderSummery = () => {
     const cartItems = useSelector((state) => state.cart);
+    const totalPrice = cartItems.totalPrice;
+    const shippingCharge = Math.trunc(Math.random() * 100);
     return (
         <>
             <Navbar />
@@ -13,10 +15,10 @@ const OrderSummery = () => {
                 <div class="justify-center flex-1 px-4 py-6 mx-auto max-w-7xl lg:py-4 lg:px-6">
                     <h2 class="mb-10 text-4xl font-bold text-center dark:text-gray-400">Your Cart</h2>
                     <div class="px-6 mb-10 lg:px-0">
-                        {/* {cartItems?.map(itm => (
-                            <CartCard title={itm.title} price={itm.price} img={itm.image} id={itm.id} />
-                        ))} */}
-                        <p>waitF</p>
+                        {cartItems.items?.map(itm => (
+                            <CartCard title={itm.name} price={itm.price} img={itm.img} id={itm.id} quantity={itm.quantity} />
+                        ))}
+
 
                     </div>
                     <div class="flex flex-wrap justify-between">
@@ -34,21 +36,21 @@ const OrderSummery = () => {
                                     <span>Subtotal</span>
                                     <span class="flex items-center text-xl">
                                         <span class="mr-2 text-base">$</span>
-                                        <span>710,70</span>
+                                        <span>{totalPrice.toPrecision(3)}</span>
                                     </span>
                                 </div>
                                 <div class="flex items-center justify-between px-10 py-4 mb-3 font-medium leading-8 bg-gray-100 bg-opacity-50 border dark:text-gray-400 dark:bg-gray-800 dark:border-gray-800 rounded-xl">
                                     <span>Shipping</span>
                                     <span class="flex items-center text-xl">
                                         <span class="mr-2 text-base">$</span>
-                                        <span>10,00</span>
+                                        <span>{totalPrice && (shippingCharge)}</span>
                                     </span>
                                 </div>
                                 <div class="flex items-center justify-between px-10 py-4 mb-6 font-medium leading-8 bg-gray-100 border dark:text-gray-400 dark:bg-gray-800 dark:border-gray-800 rounded-xl">
                                     <span>Total</span>
                                     <span class="flex items-center text-xl text-blue-500 dark:text-blue-400">
                                         <span class="mr-2 text-base">$</span>
-                                        <span>720,70</span>
+                                        <span>{totalPrice && (Number(totalPrice.toPrecision(3)) + Number(shippingCharge))}</span>
                                     </span>
                                 </div>
                                 <a class="inline-block w-full px-6 py-4 text-lg font-medium leading-6 tracking-tighter text-center text-white bg-blue-500 lg:w-auto hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-xl" href="#">Checkout</a>
